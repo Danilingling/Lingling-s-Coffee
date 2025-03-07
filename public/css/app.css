@@ -1,0 +1,266 @@
+
+body {
+    background-color: #5e3a3a;
+    animation: fondoDinamico 2s infinite alternate linear;
+}
+
+@keyframes fondoDinamico {
+    0% {
+        background-color: #5e3a3a;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.05) inset;
+    }
+    25% {
+        background-color: #6b4040;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.08) inset;
+    }
+    50% {
+        background-color: #704545;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.12) inset;
+    }
+    75% {
+        background-color: #6b4040;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.08) inset;
+    }
+    100% {
+        background-color: #5e3a3a;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.05) inset;
+    }
+}
+
+h1, h2 {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.locate {
+    text-align: center;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    color: #FFF;
+    font-family: "Italianno", serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+h1:hover, h2:hover , .locate:hover {
+    transform: scale(1.05);
+    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Kadwa", serif;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.producto_name {
+    color:  #FFF;
+    text-align: center;
+    font-family: "Italianno", serif;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h2 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Italianno", serif;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; /* Ajuste dinámico */
+    height: 80vh;
+    padding: 60px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu_frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; /* Ajuste dinámico */
+    height: auto; /* Ajuste automático */
+    max-height: 80vh; /* Limita el tamaño máximo */
+    padding: 60px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Agrega barra de desplazamiento si el contenido excede el tamaño */
+}
+
+/* Líneas en los 4 lados */
+.frame::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 50px); /* Para mantener margen uniforme */
+    height: calc(100% - 50px);
+    top: 10px;
+    left: 10px;
+    border: 2px solid white;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.frame:hover {
+    transform: translate(-50%, -50%) scale(1.02); /* Se agranda levemente */
+}
+
+.frame:hover::after {
+    transform: translate(5px, 5px); /* Se mueve suavemente */
+    opacity: 0.9; /* Se hace un poco más visible */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Brillo sutil */
+}
+
+.coffee-icon {
+    width: 400px;
+    height: 400px;
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px auto;
+}
+
+.locate-image {
+    width: 600px;
+    height: 600px;
+    background-image: url("../img/ref.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px auto;
+}
+
+.imagenes-container {
+    display: flex;
+    justify-content: space-between; /* Coloca las imágenes a los extremos */
+    align-items: center; /* Alinea las imágenes y el cuadro de opciones al centro vertical */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+
+.taza-img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+.izquierda {
+    margin-right: 20px; /* Espacio entre la imagen izquierda y el cuadro de opciones */
+}
+
+.derecha {
+    margin-left: 20px; /* Espacio entre la imagen derecha y el cuadro de opciones */
+}
+
+.cuadro_opciones {
+    width: 500px;
+    height: 420px;
+    background-color: #3E2525;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #3E2525;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cuadro_opciones:hover {
+    transform: scale(1.05);
+    background-color: #543535;
+}
+
+/* Estilo para cada botón (opción) */
+.opcion-btn {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    margin: 10px 0; /* Espaciado entre los botones */
+    background-color: #3E2525; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    text-align: center; /* Centra el texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.taza-img , .coffee-icon, .locate-image {
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.taza-img:hover , .coffee-icon:hover, .locate-image:hover {
+    transform: rotate(5deg) scale(1.05);
+    filter: brightness(1.2);
+}
+
+.opcion-btn:hover {
+    background-color: #5c3c3c; /* Color de fondo cuando pasa el mouse */
+    border-radius: 5px;
+}
+
+.opcion-btn h2 {
+    margin: 0; /* Elimina márgenes del h2 */
+    font-size: 50px; /* Ajusta el tamaño del texto */
+}
+
+.frame-admin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; /* Ajuste dinámico */
+    height: 80vh;
+
+
+.frame-admin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; /* Ajuste dinámico */
+    height: 80vh;
+    padding: 60px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease-in-out;
+}
+    padding: 60px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Líneas en los 4 lados */
+.frame-admin::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 50px); /* Para mantener margen uniforme */
+    height: calc(100% - 50px);
+    top: 10px;
+    left: 10px;
+    border: 2px solid white;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.frame-admin:hover {
+    transform: translate(-50%, -50%) scale(1.02); /* Se agranda levemente */
+}
+
+.frame-admin:hover::after {
+    transform: translate(5px, 5px); /* Se mueve suavemente */
+    opacity: 0.9; /* Se hace un poco más visible */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Brillo sutil */
+}
