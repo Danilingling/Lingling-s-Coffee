@@ -45,6 +45,8 @@ Route::put('/menu/update/{id}', [MenuController::class, 'update'])->name('menu.u
 Route::post('/menu/store', [MenuController::class, 'store'])->name('menu.store');
 Route::get('/menu/dashboard', [MenuController::class, 'dashboard'])->name('menu.dashboard');
 Route::get('/menu/opciones', [MenuController::class, 'opciones'])->name('menu.opciones');
+Route::get('/menu/productos', [MenuController::class, 'productos'])->name('menu.productos');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +65,10 @@ Route::get('/localizacion', [LocalizacionController::class, 'index'])->name('loc
 Route::get('/descuentos', [DescuentoController::class, 'index'])->name('descuentos');
 Route::get('/cupon/create', [CuponController::class, 'create'])->name('cupon.create');
 Route::post('/cupon/store', [CuponController::class, 'store'])->name('cupon.store');
-Route::get('/cupones', [CuponController::class, 'index'])->name('cupon.index');
-Route::get('/cupones/opciones', [CuponController::class, 'opciones'])->name('cupon.opciones');
+Route::get('/cupon/edit/{id}', [CuponController::class, 'edit'])->name('cupon.edit');
+Route::delete('/cupon/destroy/{id}', [CuponController::class, 'destroy'])->name('cupon.destroy');
+Route::put('/cupon/update/{id}', [CuponController::class, 'update'])->name('cupon.update');
+Route::get('/cupon/descuentos', [CuponController::class, 'descuentos'])->name('cupon.descuentos');
 
 /*
 |--------------------------------------------------------------------------
@@ -74,14 +78,3 @@ Route::get('/cupones/opciones', [CuponController::class, 'opciones'])->name('cup
 
 Route::get('/resena/{producto_id}', [ResenaController::class, 'show'])->name('resena.show');
 Route::post('/resena/{producto_id}', [ResenaController::class, 'store'])->name('resena.store');
-
-/*
-|--------------------------------------------------------------------------
-| Rutas de Ticket
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
-Route::get('/tickets/create', [TicketController::class, 'create'])->name('tickets.create');
-Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
-

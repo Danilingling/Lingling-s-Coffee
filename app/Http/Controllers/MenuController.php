@@ -103,7 +103,7 @@ class MenuController extends Controller
 
         $producto->save();
 
-        return redirect()->route('menu.opciones')->with('success', 'Producto actualizado correctamente.');
+        return redirect()->route('menu.productos')->with('success', 'Producto actualizado correctamente.');
     }
 
     public function destroy($id)
@@ -113,4 +113,11 @@ class MenuController extends Controller
 
         return redirect()->route('menu.opciones')->with('success', 'Producto eliminado correctamente.');
     }
+
+    public function productos()
+    {
+        $productos = Producto::with('categoria')->get();
+        return view('Menu.productos', compact('productos'));
+    }
+
 }

@@ -62,9 +62,9 @@
             border-radius: 8px;
         }
         .descripcion, .precio, .calificacion {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
-            color: #5a4637;
+            color: #ffffff;
         }
         h3 {
             color: #8b5e3c;

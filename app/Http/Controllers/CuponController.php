@@ -28,14 +28,46 @@ class CuponController extends Controller {
         return redirect()->route('cupon.create')->with('success', 'Cupón agregado correctamente.');
     }
 
+    public function edit($id)
+    {
+        $cupon = Cupon::findOrFail($id);
+        return view('Descuentos.edit', compact('cupon'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'codigo' => 'required|string|max:255|unique:cupones,codigo,' . $id,
+            'descuento' => 'required|numeric|min:1|max:100',
+        ]);
+
+        $cupon = Cupon::findOrFail($id);
+        $cupon->codigo = $request->codigo;
+        $cupon->descuento = $request->descuento;
+        $cupon->save();
+
+        return redirect()->route('cupon.descuentos')->with('success', 'Cupón actualizado correctamente.');
+    }
+
+
+    public function destroy($id)
+    {
+        $cupon = Cupon::findOrFail($id);
+        $cupon->delete();
+
+        return redirect()->route('cupon.index')->with('success', 'Cupón eliminado correctamente.');
+    }
+
     public function index() {
         $cupones = Cupon::all();
         return view('Descuentos.index', compact('cupones'));
     }
 
-    public function opciones()
+
+    public function descuentos()
     {
-        return view('Descuentos.opciones');
+        $cupones = Cupon::all();
+        return view('Descuentos.descuentos', compact('cupones'));
     }
 
 

@@ -12,22 +12,22 @@
 
 <div class="container">
     <div class="menu_frame">
-    <h2 class="producto_name">Menú de Productos</h2>
+        <h2 class="producto_name">Menú de Productos</h2>
 
-    <div class="carta">
-        <div class="productos-container">
-            @foreach($productos as $producto)
-                <div class="producto">
-                    <a href="{{ route('resena.show', $producto->id) }}">
-                        <img src="{{ asset('storage/' . $producto->imagen) }}" alt="{{ $producto->nombre }}">
-                    </a>
-                    <div class="producto-info">
-                        <h3>{{ $producto->nombre }}</h3>
-                        <p>Precio: ${{ $producto->precio }}</p>
-                        <p>{{ $producto->descripcion }}</p>
+        <div class="carta">
+            <div class="productos-container">
+                @foreach($productos as $producto)
+                    <div class="producto">
+                        <a href="{{ route('resena.show', $producto->id) }}">
+                            <img src="{{ asset('storage/' . $producto->imagen) }}" alt="{{ $producto->nombre }}">
+                        </a>
+                        <div class="producto-info">
+                            <h3>{{ $producto->nombre }}</h3>
+                            <p>Precio: ${{ $producto->precio }}</p>
+                            <p>{{ $producto->descripcion }}</p>
+                        </div>
                     </div>
-                </div>
-              @endforeach
+                @endforeach
             </div>
         </div>
     </div>

@@ -34,6 +34,10 @@
                 <h2>Editar descuento</h2>
             </a>
 
+            <a href="{{ route('cupon.descuentos') }}" class="opcion-btn">
+                <h2>Ver Descuentos</h2>
+            </a>
+
         </div>
 
         <img src="{{ asset('img/taza_der.png') }}" alt="Taza Derecha" class="taza-img derecha">

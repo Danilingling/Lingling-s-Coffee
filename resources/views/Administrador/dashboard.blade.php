@@ -22,18 +22,13 @@
 
             <div class="cuadro_opciones">
                 <!-- Opción 1: Modificar Menu -->
-                <a href="{{ route('menu.opciones') }}" class="opcion-btn">
+                <a href="{{ route('menu.productos') }}" class="opcion-btn">
                     <h2>Modificar Menu</h2>
                 </a>
 
                 <!-- Opción 2: Modificar Descuentos -->
-                <a href="{{ route('cupon.opciones') }}" class="opcion-btn">
+                <a href="{{ route('cupon.descuentos') }}" class="opcion-btn">
                     <h2>Modificar Descuentos</h2>
-                </a>
-
-                <!-- Opción 3: Tickets -->
-                <a href="{{ route('tickets.create') }}" class="opcion-btn">
-                    <h2>Registrar Ticket</h2>
                 </a>
 
                 <!-- Opción 4: Salir -->

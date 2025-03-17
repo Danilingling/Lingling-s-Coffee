@@ -31,11 +31,6 @@
                     <h2>Localización</h2>
                 </a>
 
-                <!-- Opción 3: Otra opción -->
-                <a href="{{ route('cupon.index') }}" class="opcion-btn">
-                    <h2>Cupones</h2>
-                </a>
-
                 <!-- Opción 4: Administracion -->
                 <a href="{{ route('admin') }}" class="opcion-btn">
                     <h2>Administración</h2>
